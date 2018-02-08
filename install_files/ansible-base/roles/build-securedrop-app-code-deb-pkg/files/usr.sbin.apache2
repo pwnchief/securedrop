@@ -82,6 +82,7 @@
   /sbin/ldconfig rix,
   /sbin/ldconfig.real rix,
   /tmp/** rwm,
+  /usr/bin/file rix,
   /usr/bin/gpg rix,
   /usr/bin/gpg-agent rix,
   /usr/bin/gpg2 rix,
