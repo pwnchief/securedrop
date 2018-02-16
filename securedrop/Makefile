@@ -17,7 +17,7 @@ images: ## Build the docker images
 	   --build-arg=USER_NAME=$(USER) \
 	   -t $(IMAGE)-test:$(TAG) .
 
-TESTFILES ?= tests
+TESTS ?= tests/
 .PHONY: test
 test: ## Run the test suite in a dockerized environment
 	docker run \
@@ -25,7 +25,7 @@ test: ## Run the test suite in a dockerized environment
 		$(EXTRA_TEST_ARGS) \
 		--name $(IMAGE)-test \
 		-ti $(IMAGE)-test:$(TAG) \
-		./bin/test -v $(TESTFILES)
+		./bin/test -v $(TESTS)
 
 .PHONY: testclean
 testclean: ## Remove the docker test image
